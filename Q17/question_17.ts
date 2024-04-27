@@ -7,33 +7,38 @@
 
 // • Remove the last two names from your list, so you have an empty list. Print your list to make sure you actually have an empty list at the end of your program.
 
-// Function to print invitation messages
-function inviteToDinner(person: string) {
-    console.log(`Dear ${person}, you are invited to dinner. Looking forward to your presence!`);
-}
+let guestList: string[] = ["Asma", "Ali", "Ayesha", "Muhammad", "Hafsa"];
+let cantMakeIt = "Ayesha";
+let newGuest: string = "Muneeba";
+let moreGuest: string[] = ["Rahima", "Nawal", "Khateeba"]
 
-// Function to print apology message
-function apologize(person: string) {
-    console.log(`Sorry ${person}, the dinner table won't arrive in time, so we can't invite you.`);
-}
+console.log("****INVITATIONS****")
+guestList.forEach(name => console.log(`Dear ${name}, you are invited to dinner. Looking forward to your presence!`));
 
-// Initial guest list
-let guestList: string[] = ["Albert Einstein", "Marie Curie", "Leonardo da Vinci", "Isaac Newton", "Galileo Galilei", "Stephen Hawking"];
+const index = guestList.indexOf(cantMakeIt);
+    if (index !== -1) {
+        guestList.splice(index, 1);
+    }
 
-// Inform that only two people can be invited for dinner
-console.log("Sorry, we can only invite two people for dinner.");
+    guestList.push(newGuest);
+    console.log(`${cantMakeIt} can't make it to the dinner.\n`);
 
-// Remove guests from the list until only two names remain
+    console.log("****UPDATED INVITATIONS****");
+guestList.forEach(name=>console.log(`Dear ${name}, you are invited to dinner. Looking forward to your presence!`))
+
+console.log("Good news! We found a bigger dinner table.\n");
+guestList.unshift(moreGuest[0]); // Add new guest to the beginning
+guestList.splice(Math.floor(guestList.length / 2), 0, moreGuest[1]); // Add new guest to the middle
+guestList.push(moreGuest[2]);
+
+console.log("****NEW INVITATIONS****");
+guestList.forEach(name => console.log(`Dear ${name}, you are invited to dinner. Looking forward to your presence!`));
+
+console.log("\n****DINNER TABLE DIDN'T ARRIVED****");
 while (guestList.length > 2) {
-    apologize(guestList.pop()!); // Print apology message and remove the last guest from the list
+    const removedGuest: string = guestList.pop()!; // Remove the last guest and store it
+    console.log(`Sorry ${removedGuest}, the dinner table won't arrive in time, so we can't invite you.`);
 }
 
-// Print invitation message to the remaining two guests
-console.log("Invitations:");
-guestList.forEach(inviteToDinner);
-
-// Remove the last two names from the list
-guestList.splice(0, 2);
-
-// Print the list to ensure it's empty
-console.log("Guest list:", guestList);
+console.log("\n****INVITATIONS****")
+guestList.forEach(name => console.log(`Dear ${name}, you are invited to dinner. Looking forward to your presence!`));

@@ -5,36 +5,29 @@
 
 // • Add one new guest to the middle of your array. • Use append() to add one new guest to the end of your list. • Print a new set of invitation messages, one for each person in your list.
 
+let guestList: string[] = ["Asma", "Ali", "Ayesha", "Muhammad", "Hafsa"];
+let cantMakeIt = "Ayesha";
+let newGuest: string = "Muneeba";
+let moreGuest: string[] = ["Rahima", "Nawal", "Khateeba"]
 
+console.log("****INVITATIONS****")
+guestList.forEach(name => console.log(`Dear ${name}, you are invited to dinner. Looking forward to your presence!`));
 
-// Function to print invitation messages
-function inviteToDinner(person: string) {
-    console.log(`Dear ${person}, you are invited to dinner. Looking forward to your presence!`);
-}
+const index = guestList.indexOf(cantMakeIt);
+    if (index !== -1) {
+        guestList.splice(index, 1);
+    }
 
-// Function to handle updating the guest list and sending new invitations
-function updateGuestListAndSendInvitations(guestList: string[], newGuests: string[]) {
-    // Print existing invitations
-    console.log("Existing invitations:");
-    guestList.forEach(inviteToDinner);
+    guestList.push(newGuest);
+    console.log(`${cantMakeIt} can't make it to the dinner.\n`);
 
-    // Inform about the bigger dinner table
-    console.log("Good news! We found a bigger dinner table.");
+    console.log("****UPDATED INVITATIONS****");
+guestList.forEach(name=>console.log(`Dear ${name}, you are invited to dinner. Looking forward to your presence!`))
 
-    // Add new guests
-    guestList.unshift(newGuests[0]); // Add new guest to the beginning
-    guestList.splice(Math.floor(guestList.length / 2), 0, newGuests[1]); // Add new guest to the middle
-    guestList.push(newGuests[2]); // Add new guest to the end using push
+console.log("Good news! We found a bigger dinner table.\n");
+guestList.unshift(moreGuest[0]); // Add new guest to the beginning
+guestList.splice(Math.floor(guestList.length / 2), 0, moreGuest[1]); // Add new guest to the middle
+guestList.push(moreGuest[2]);
 
-    // Print new invitations
-    console.log("New invitations:");
-    guestList.forEach(inviteToDinner);
-}
-
-// Initial guest list
-let initialGuestList: string[] = ["Albert Einstein", "Marie Curie", "Leonardo da Vinci"];
-// New guests to be added
-let newGuests: string[] = ["Isaac Newton", "Galileo Galilei", "Stephen Hawking"];
-
-// Update guest list and send new invitations
-updateGuestListAndSendInvitations(initialGuestList, newGuests);
+console.log("****NEW INVITATIONS****");
+guestList.forEach(name => console.log(`Dear ${name}, you are invited to dinner. Looking forward to your presence!`));

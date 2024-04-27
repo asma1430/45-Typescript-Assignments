@@ -6,38 +6,21 @@
 
 // • Print a second set of invitation messages, one for each person who is still in your list.
 
-// Function to print invitation messages
-function inviteToDinner(person: string) {
-    console.log(`Dear ${person}, you are invited to dinner. Looking forward to your presence!`);
-}
+let guestList: string[] = ["Asma", "Ali", "Ayesha", "Muhammad", "Hafsa"];
+console.log("****INVITATIONS****")
+guestList.forEach(name => console.log(`Dear ${name}, you are invited to dinner. Looking forward to your presence!`));
 
-// Function to handle input and update guest list
-function updateGuestList(initialGuestList: string[], cantMakeIt: string, newGuest: string) {
-    // Print initial invitations
-    console.log("Initial invitations:");
-    initialGuestList.forEach(inviteToDinner);
+let cantMakeIt = "Ayesha";
+let newGuest: string = "Muneeba";
 
-    // Remove the guest who can't make it
-    const index = initialGuestList.indexOf(cantMakeIt);
+
+const index = guestList.indexOf(cantMakeIt);
     if (index !== -1) {
-        initialGuestList.splice(index, 1);
+        guestList.splice(index, 1);
     }
 
-    // Add new guest
-    initialGuestList.push(newGuest);
+    guestList.push(newGuest);
+    console.log(`${cantMakeIt} can't make it to the dinner.\n`);
+    console.log("****UPDATED INVITATIONS****");
 
-    // Print name of the guest who can't make it
-    console.log(`${cantMakeIt} can't make it to the dinner.`);
-
-    // Print updated invitations
-    console.log("Updated invitations:");
-    initialGuestList.forEach(inviteToDinner);
-}
-
-// Example usage
-let initialGuestList: string[] = ["Albert Einstein", "Marie Curie", "Leonardo da Vinci"];
-let cantMakeIt: string = "Marie Curie";
-let newGuest: string = "Nikola Tesla";
-
-updateGuestList(initialGuestList, cantMakeIt, newGuest);
-
+guestList.forEach(name=>console.log(`Dear ${name}, you are invited to dinner. Looking forward to your presence!`))
