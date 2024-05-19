@@ -19,26 +19,26 @@
 
 // • Sort to change your array so it’s stored in reverse alphabetical order. Print the list to show that its order has changed.
 
-let placesToVisit: string[] = ["Tokyo", "Paris", "New York", "Japan", "Rome"];
+let placesToVisit: string[] = ["Makkah", "Madina", "Germany", "Switzerland", "Rome"];
 
-// Print original order
+//original order
 console.log("Original Order:");
 console.log(placesToVisit);
 
-// Print alphabetical order without modifying the original list
+//alphabetical order without modifying the original list
 console.log("\nAlphabetical Order:");
 console.log([...placesToVisit].sort());
 
-// Show original order
-console.log("\nOriginal Order (unchanged):");
+//original order
+console.log("\nOriginal Order Again:");
 console.log(placesToVisit);
 
-// Print reverse alphabetical order without modifying the original list
+//reverse alphabetical order without modifying the original list
 console.log("\nReverse Alphabetical Order:");
 console.log([...placesToVisit].sort().reverse());
 
-// Show original order
-console.log("\nOriginal Order (unchanged):");
+//original order
+console.log("\nOriginal Order Again:");
 console.log(placesToVisit);
 
 // Reverse the order of the list

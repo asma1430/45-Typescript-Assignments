@@ -18,21 +18,21 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
 // • Reverse the order of your list again. Print the list to show it’s back to its original order.
 // • Sort your array so it’s stored in alphabetical order. Print the array to show that its order has been changed.
 // • Sort to change your array so it’s stored in reverse alphabetical order. Print the list to show that its order has changed.
-var placesToVisit = ["Tokyo", "Paris", "New York", "Japan", "Rome"];
-// Print original order
+var placesToVisit = ["Makkah", "Madina", "Germany", "Switzerland", "Rome"];
+//original order
 console.log("Original Order:");
 console.log(placesToVisit);
-// Print alphabetical order without modifying the original list
+//alphabetical order without modifying the original list
 console.log("\nAlphabetical Order:");
 console.log(__spreadArray([], placesToVisit, true).sort());
-// Show original order
-console.log("\nOriginal Order (unchanged):");
+//original order
+console.log("\nOriginal Order Again:");
 console.log(placesToVisit);
-// Print reverse alphabetical order without modifying the original list
+//reverse alphabetical order without modifying the original list
 console.log("\nReverse Alphabetical Order:");
 console.log(__spreadArray([], placesToVisit, true).sort().reverse());
-// Show original order
-console.log("\nOriginal Order (unchanged):");
+//original order
+console.log("\nOriginal Order Again:");
 console.log(placesToVisit);
 // Reverse the order of the list
 console.log("\nReversed Order:");
